@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Merchant Management System</h1>
+        
+        <!-- Add Merchant Form -->
+        <div class="form-container">
+            <h2>Add/Edit Merchant</h2>
+            <form id="merchantForm">
+                <input type="hidden" id="merchantId">
+                <div class="form-group">
+                    <label for="merchantName">Merchant Name:</label>
+                    <input type="text" id="merchantName" required>
+                </div>
+                <div class="form-group">
+                    <label for="merchantEmail">Email:</label>
+                    <input type="email" id="merchantEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="merchantPhone">Phone:</label>
+                    <input type="tel" id="merchantPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="merchantAddress">Address:</label>
+                    <textarea id="merchantAddress" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="orderStatus">Order Status:</label>
+                    <select id="orderStatus" required>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Save Merchant</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Merchants List -->
+        <div class="merchants-container">
+            <h2>Merchants List</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search merchants...">
+            </div>
+            <div class="table-container">
+                <table id="merchantsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Order Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="merchantsList">
+                        <!-- Merchants will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
